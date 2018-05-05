@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagement
 {
-    class Teacher
+   public class Teacher
     {
         //properties
 
@@ -18,13 +18,15 @@ namespace SchoolManagement
        
         //Teacher salary    salary
         //Salary Earned by Teacher
-        
+        [Key]
         public int Id { get; set; } //shld be unique
-        
+        [Required]
         public string Name { get; set; }
         public decimal Totalsalary { get; set; }
         public int SalaryEarned { get; set; }
+        [Required]
         public long ContactNumber { get; set; }
+        [Required]
         public string Address { get; set; }
         public int Grade { get; set; }
 

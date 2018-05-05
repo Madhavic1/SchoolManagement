@@ -22,8 +22,10 @@ namespace SchoolManagement
                 Console.WriteLine("0 : Quit");
                 Console.WriteLine("1 : Register for School");
                 Console.WriteLine("2: View Student Information");
-                Console.WriteLine("3: Pay Tuition Fee");
-                Console.WriteLine("4: View Balance Due");
+                Console.WriteLine("3: Pay Student Tuition Fee");
+                Console.WriteLine("4: View Staudent Tuition Balance Due");
+                Console.WriteLine("5: Add a Teacher");
+                Console.WriteLine("6: Pay Teacher Salary");
 
 
                 Console.WriteLine("Please Select an option from Above..");
@@ -84,6 +86,19 @@ namespace SchoolManagement
                     case "3":
                         break;
                     case "4":
+                        break;
+                    case "5":
+                        Console.Write("Teacher Name:");
+                        name = Console.ReadLine();
+                        Console.WriteLine("Address: ");
+                        string address = Console.ReadLine();
+                        Console.WriteLine("Contact Number");
+                        long contactNumber = Convert.ToInt64(Console.ReadLine());
+                        Console.Write("Grade");
+                        grade = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Total Salary");
+                        var salary = Convert.ToDecimal(Console.ReadLine());
+                        var teacher = School.AddTeacher(name, address, contactNumber, grade, salary);
                         break;
                 }
 

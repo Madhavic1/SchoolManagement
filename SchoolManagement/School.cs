@@ -21,20 +21,20 @@ namespace SchoolManagement
         /// <param name="fatherName">Student's Father name</param>
         /// <param name="artSubject">the special art subject taken by a student</param>
         /// <returns></returns>
-        private static List<Student> students = new List<Student>();
-        private static List<Teacher> teachers = new List<Teacher>();
+       
 
         public static Student EnrollStudent(string name,int age,int grade,string fatherName,Arts artSubject)
         {
             var student = new Student(name, age, grade, fatherName, artSubject);
-            students.Add(student);
+            db.Students.Add(student);
+            db.SaveChanges();
 
             return student;
         }
 
         public static IEnumerable<Student> GetStudentInformation(string studentName, string fatherName)
         {
-            return students.Where(st => st.Name == studentName)
+            return db.Students.Where(st => st.Name == studentName)
                 .Where(st => st.Father_Name == fatherName);
         }
 
@@ -46,7 +46,8 @@ namespace SchoolManagement
                             Grade = grade,
                             Totalsalary = totalSalary
             };
-            teachers.Add(teacher);
+            db.Teachers.Add(teacher);
+            db.SaveChanges();
 
             return teacher;
         }
