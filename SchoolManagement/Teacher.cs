@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace SchoolManagement
 {
@@ -16,11 +18,19 @@ namespace SchoolManagement
        
         //Teacher salary    salary
         //Salary Earned by Teacher
+        
+        public int Id { get; set; } //shld be unique
+        
+        public string Name { get; set; }
+        public decimal Totalsalary { get; set; }
+        public int SalaryEarned { get; set; }
+        public long ContactNumber { get; set; }
+        public string Address { get; set; }
+        public int Grade { get; set; }
 
-        public int id { get; set; } //shld be unique
-        public string name { get; set; }
-        public float salary { get; set; }
-        public int salaryEarned { get; set; }
+
+
+
 
     }
 }
